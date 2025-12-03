@@ -2303,6 +2303,24 @@ str, {'internal', 'external'}
         chaosmagpy.coordinate_utils.coupling_Newell
         chaosmagpy.coordinate_utils.dipole_tilt
 
+        Warnings
+        --------
+        Predictions of the ionospheric magnetic field below the reference
+        height (110 km), including at the Earth's surface, are only approximate
+        because contributions from the associated Earth-induced magnetic field
+        are not taken into account.
+
+        The CHAOS-8 ionospheric field is estimated from data at satellite
+        altitude and represents the combined fields from the E-layer currents
+        and associated Earth-induced currents. Because these two contributions
+        are not separated in the model, the total ionospheric field cannot be
+        directly downward-continued to the Earth's surface. However, since the
+        induced counterpart is expected to be small at satellite altitude, the
+        dominant E-layer field can be approximated at ground level, assuming
+        the E-layer currents flow in a horizontal sheet at the reference
+        height. This function implements the above approximation to estimate
+        the dominant E-layer field below the reference height.
+
         Notes
         -----
         Time series of the interplanetary magnetic field (``imf_y``,
